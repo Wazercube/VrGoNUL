@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Balle : MonoBehaviour
 {
+    /*
     private bool oui;
     private Rigidbody _rb;
     public float _speed;
@@ -47,5 +48,5 @@ public class Balle : MonoBehaviour
             _rb.velocity = Vector3.zero;
             _isMoving = false;
         }
-    }
+    }*/
 }
