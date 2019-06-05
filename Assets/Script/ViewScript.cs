@@ -16,13 +16,12 @@ public class ViewScript : MonoBehaviour
     {
         timeBeforeLaunch = 3f;
         scriptBalle = balle.GetComponent<Balle>();
+        WordSettings.Instance.CheckBrique();
     }
 
     // Update is called once per frame
     void Update()
     {
-
-
 
         RaycastHit hit;
         if(Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity, mask))
@@ -44,6 +43,21 @@ public class ViewScript : MonoBehaviour
             }
         }
 
-       
+
+
     }
+
+    public float TimeBeforeLaunch
+    {
+        get
+        {
+            return timeBeforeLaunch;
+        }
+        set
+        {
+            timeBeforeLaunch = value;
+        }
+    }
+
 }
+

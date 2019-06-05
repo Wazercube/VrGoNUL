@@ -31,7 +31,7 @@ public class WordSettings : SingletonSettings<WordSettings>
 
     public void GameOver()
     {
-        SceneManager.LoadScene(sceneName: "MenuLoose");
+       // SceneManager.LoadScene(sceneName: "MenuLoose");
     }
 
     public void CheckWin()

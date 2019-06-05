@@ -9,11 +9,14 @@ public class Balle : MonoBehaviour
     public float _speed;
     private bool _isMoving = false;
     private Vector3 _startPosition;
+    public GameObject laCamera;
+    private ViewScript viewScript;
     // Start is called before the first frame update
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
         _startPosition = transform.position;
+        viewScript = laCamera.GetComponent<ViewScript>();
     }
 
     // Update is called once per frame
@@ -42,15 +45,22 @@ public class Balle : MonoBehaviour
     {
         if(other.name == "DeadZone")
         {
-            WordSettings.Instance.hpPlayer--; 
-            transform.position = _startPosition;
-            _rb.velocity = Vector3.zero;
-            _isMoving = false;
+            Respawn();
 
             if(WordSettings.Instance.hpPlayer<=0)
             {
                 WordSettings.Instance.GameOver();
             }
         }
+    }
+
+
+    private void Respawn()
+    {
+        WordSettings.Instance.hpPlayer--;
+        transform.position = _startPosition;
+        _rb.velocity = Vector3.zero;
+        viewScript.TimeBeforeLaunch = 3f;
+        _isMoving = false;
     }
 }
