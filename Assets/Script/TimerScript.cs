@@ -13,7 +13,7 @@ public class TimerScript : MonoBehaviour
     private List<Text> texts;
     private List<float> timerAnim;
     private short toUpdate;
-
+    private bool stopAll = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,19 +30,27 @@ public class TimerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer -= Time.deltaTime;
-        
-        if(timer<(timerInt-1))
+        if (!stopAll)
         {
-            ChangeNumber();
+            timer -= Time.deltaTime;
+
+            if (timer < (timerInt - 1))
+            {
+                ChangeNumber();
+                if(timerInt <= -2)
+                {
+                    StopAll();
+                    return;
+                }
+            }
+
+            MoveGameObject(0);
+            MoveGameObject(1);
+
+            PhaseGameObject(0);
+            PhaseGameObject(1);
+            AddTimeToAnimTimer();
         }
-
-        MoveGameObject(0);
-        MoveGameObject(1);
-
-        PhaseGameObject(0);
-        PhaseGameObject(1);
-        AddTimeToAnimTimer();
     }
 
     void MoveGameObject(int n)
@@ -71,6 +79,12 @@ public class TimerScript : MonoBehaviour
             timerAnim[i] += Time.deltaTime;
         }
     }
-    
+
+    void StopAll()
+    {
+        stopAll = true;
+        texts[0].color = new Color(texts[1].color.r, texts[1].color.g, texts[1].color.b, 0.01f);
+        
+    }
 
 }
