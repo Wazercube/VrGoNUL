@@ -20,6 +20,7 @@ public class brique : MonoBehaviour
             WordSettings.Instance.nbBriqueBrake++;
             // ... si devrais etre destruit...
             Destroy(gameObject);
+            WordSettings.Instance.CheckWin();
         }
     }
     

@@ -14,9 +14,11 @@ public class ViewScript : MonoBehaviour
 
     void Start()
     {
-        timeBeforeLaunch = 3f;
+        timeBeforeLaunch = 10f;
         scriptBalle = balle.GetComponent<Balle>();
         WordSettings.Instance.CheckBrique();
+        WordSettings.Instance.hpPlayer = 3;
+        WordSettings.Instance.nbBriqueBrake = 0;
     }
 
     // Update is called once per frame

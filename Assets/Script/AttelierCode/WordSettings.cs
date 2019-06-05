@@ -18,7 +18,7 @@ public class WordSettings : SingletonSettings<WordSettings>
     {
         if (hpPlayer < 0)
         {
-            SceneManager.LoadScene(sceneName: "MenuLoose");
+           // SceneManager.LoadScene(sceneName: "MenuLoose");
         }
     }
 
@@ -31,14 +31,18 @@ public class WordSettings : SingletonSettings<WordSettings>
 
     public void GameOver()
     {
-       // SceneManager.LoadScene(sceneName: "MenuLoose");
+        // SceneManager.LoadScene(sceneName: "MenuLoose");
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
     }
 
     public void CheckWin()
     {
         if (nbBriqueBrake == nbBriqueTot)
         {
-            SceneManager.LoadScene(sceneName: "MenuWin");
+            // SceneManager.LoadScene(sceneName: "MenuWin");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 
