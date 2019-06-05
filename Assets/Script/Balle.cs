@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class Balle : MonoBehaviour
 {
-    /*
     private bool oui;
     private Rigidbody _rb;
     public float _speed;
     private bool _isMoving = false;
     private Vector3 _startPosition;
+    public GameObject laCamera;
+    private ViewScript viewScript;
     // Start is called before the first frame update
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
         _startPosition = transform.position;
+        viewScript = laCamera.GetComponent<ViewScript>();
     }
 
     // Update is called once per frame
@@ -24,12 +26,7 @@ public class Balle : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.GetComponent<MoveRacket>() && !_isMoving)
-        {
-            _isMoving = true;
-            transform.rotation = collision.transform.rotation;
-            _rb.AddForce(transform.up * _speed);
-        }
+      
 
         brique br = collision.gameObject.GetComponent<brique>();
         if(br)
@@ -38,15 +35,33 @@ public class Balle : MonoBehaviour
         }
     }
 
+    public void LaunchBall()
+    {
+        _isMoving = true;
+        _rb.AddForce(transform.forward * _speed);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.name == "DeadZone")
         {
-            WordSettings.Instance.hpPlayer--;
-            
-            transform.position = _startPosition;
-            _rb.velocity = Vector3.zero;
-            _isMoving = false;
+            Respawn();
+
+            if(WordSettings.Instance.hpPlayer<=0)
+            {
+                WordSettings.Instance.GameOver();
+            }
         }
-    }*/
+    }
+
+
+    private void Respawn()
+    {
+        WordSettings.Instance.hpPlayer--;
+        transform.position = _startPosition;
+        _rb.velocity = Vector3.zero;
+        viewScript.TimeBeforeLaunch = 3f;
+        _isMoving = false;
+        
+    }
 }

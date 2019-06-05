@@ -17,8 +17,10 @@ public class brique : MonoBehaviour
         // Si la brique a tout perdu, sa santé n'ont pas encore été définis ...
         if (HP <= 0)
         {
+            WordSettings.Instance.nbBriqueBrake++;
             // ... si devrais etre destruit...
             Destroy(gameObject);
+            WordSettings.Instance.CheckWin();
         }
     }
     

@@ -7,12 +7,12 @@ public class MenuScript : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene(sceneName:"SampleScene");
+        SceneManager.LoadScene(sceneName: "Tristan");
     }
 
     public void CreditsGame()
     {
-        SceneManager.LoadScene(sceneName:"Cerdits");
+        SceneManager.LoadScene(sceneName: "Credits");
     }
 
     public void RetourMenu()
