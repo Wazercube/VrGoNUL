@@ -21,7 +21,6 @@ public class ViewScript : MonoBehaviour
         {
             panier.transform.position = hit.point;
             
-            Debug.Log(hit.point);
         }
     }
 }
