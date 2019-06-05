@@ -62,6 +62,6 @@ public class Balle : MonoBehaviour
         _rb.velocity = Vector3.zero;
         viewScript.TimeBeforeLaunch = 3f;
         _isMoving = false;
-        WordSettings.Instance.CheckWin();
+        
     }
 }
