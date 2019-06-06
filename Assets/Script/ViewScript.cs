@@ -19,6 +19,7 @@ public class ViewScript : MonoBehaviour
         WordSettings.Instance.CheckBrique();
         WordSettings.Instance.hpPlayer = 3;
         WordSettings.Instance.nbBriqueBrake = 0;
+        WordSettings.Instance.nbBalle = 1;
     }
 
     // Update is called once per frame

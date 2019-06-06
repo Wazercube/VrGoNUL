@@ -6,6 +6,7 @@ public class brique : MonoBehaviour
 {
     public int HP;
 
+    public GameObject bonus;
 
 
     public void TakeDamage(int amount)
@@ -19,6 +20,11 @@ public class brique : MonoBehaviour
         {
             WordSettings.Instance.nbBriqueBrake++;
             // ... si devrais etre destruit...
+            if(WordSettings.Instance.nbBriqueBrake % 5 == 0)
+            {
+                Instantiate(bonus, transform.position,transform.rotation);
+                Debug.Log("oui0");
+            }
             Destroy(gameObject);
             WordSettings.Instance.CheckWin();
         }

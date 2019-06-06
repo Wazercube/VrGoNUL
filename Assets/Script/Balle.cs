@@ -12,7 +12,7 @@ public class Balle : MonoBehaviour
     public GameObject laCamera;
     private ViewScript viewScript;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         _rb = GetComponent<Rigidbody>();
         _startPosition = transform.position;
@@ -44,13 +44,23 @@ public class Balle : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if(other.name == "DeadZone")
-        {
-            Respawn();
-
-            if(WordSettings.Instance.hpPlayer<=0)
+        { 
+            if(WordSettings.Instance.nbBalle == 1)
             {
-                WordSettings.Instance.GameOver();
+                Respawn();
+
+                if (WordSettings.Instance.hpPlayer <= 0)
+                {
+                    WordSettings.Instance.GameOver();
+                }
             }
+            else
+            {
+                Destroy(gameObject);
+                WordSettings.Instance.nbBalle--;
+             
+            }
+            
         }
     }
 
