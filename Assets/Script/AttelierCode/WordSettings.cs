@@ -13,6 +13,8 @@ public class WordSettings : SingletonSettings<WordSettings>
 
     public int nbBriqueBrake;
 
+    public int nbBalle;
+
 
     public void CheckGameOver()
     {
