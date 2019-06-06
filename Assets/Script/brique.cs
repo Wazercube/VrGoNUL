@@ -23,7 +23,7 @@ public class brique : MonoBehaviour
             if(WordSettings.Instance.nbBriqueBrake % 5 == 0)
             {
                 Instantiate(bonus, transform.position,transform.rotation);
-                Debug.Log("oui0");
+               
             }
             Destroy(gameObject);
             WordSettings.Instance.CheckWin();

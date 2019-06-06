@@ -30,7 +30,7 @@ public class SingletonSettings<TSingletonType> : ScriptableObject
                 }
                 else
                 {
-                    Debug.LogWarning("There's no asset of type ");
+                    
                     _instance =  ScriptableObject.CreateInstance<TSingletonType>();
                 }
                 
