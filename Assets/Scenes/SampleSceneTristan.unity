@@ -1862,6 +1862,12 @@ Transform:
   m_Father: {fileID: 1836336852}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &458849382 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 879670651016122334, guid: 927507327e53b314eaecb14ba96166fd,
+    type: 3}
+  m_PrefabInstance: {fileID: 346611743}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &460785930
 GameObject:
   m_ObjectHideFlags: 0
@@ -7967,6 +7973,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 700
   laCamera: {fileID: 1007844731}
+  timer: {fileID: 458849382}
 --- !u!54 &1995430570
 Rigidbody:
   m_ObjectHideFlags: 0

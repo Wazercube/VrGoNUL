@@ -11,6 +11,7 @@ public class Balle : MonoBehaviour
     private Vector3 _startPosition;
     public GameObject laCamera;
     private ViewScript viewScript;
+    public GameObject timer;
     // Start is called before the first frame update
     void Awake()
     {
@@ -68,9 +69,12 @@ public class Balle : MonoBehaviour
     private void Respawn()
     {
         WordSettings.Instance.hpPlayer--;
+        timer.GetComponent<TimerScript>().ResetTimer();
+        timer.GetComponent<TimerScript>().SetTimer(3f);
+        timer.GetComponent<TimerScript>().StartTimer();
         transform.position = _startPosition;
         _rb.velocity = Vector3.zero;
-        viewScript.TimeBeforeLaunch = 3f;
+        viewScript.TimeBeforeLaunch = 5f;
         _isMoving = false;
         
     }
