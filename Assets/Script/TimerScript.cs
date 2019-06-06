@@ -53,6 +53,7 @@ public class TimerScript : MonoBehaviour
         texts = new List<Text>();
         texts.Add(textGameObjects[0].GetComponent<Text>());
         texts.Add(textGameObjects[1].GetComponent<Text>());
+        stopAll = false;
     }
 
     /// <summary>

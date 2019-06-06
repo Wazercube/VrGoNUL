@@ -7,7 +7,7 @@ public class RotateRandomly : MonoBehaviour
 
     Vector3 direction;
     float x,y,z = 0;
-
+    public float speed;
     // Start is called before the first frame update
     void Start()
     {      
@@ -25,6 +25,6 @@ public class RotateRandomly : MonoBehaviour
         z = Mathf.Clamp(z, -1, 1);
 
         direction = new Vector3(x, y, z);
-        transform.Rotate(direction , 180 * Time.deltaTime);
+        transform.Rotate(direction , speed * Time.deltaTime);
     }
 }
