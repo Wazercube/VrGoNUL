@@ -11,8 +11,9 @@ public class Balle : MonoBehaviour
     private Vector3 _startPosition;
     public GameObject laCamera;
     private ViewScript viewScript;
+    public GameObject timer;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         _rb = GetComponent<Rigidbody>();
         _startPosition = transform.position;
@@ -44,13 +45,23 @@ public class Balle : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if(other.name == "DeadZone")
-        {
-            Respawn();
-
-            if(WordSettings.Instance.hpPlayer<=0)
+        { 
+            if(WordSettings.Instance.nbBalle == 1)
             {
-                WordSettings.Instance.GameOver();
+                Respawn();
+
+                if (WordSettings.Instance.hpPlayer <= 0)
+                {
+                    WordSettings.Instance.GameOver();
+                }
             }
+            else
+            {
+                Destroy(gameObject);
+                WordSettings.Instance.nbBalle--;
+             
+            }
+            
         }
     }
 
@@ -58,9 +69,12 @@ public class Balle : MonoBehaviour
     private void Respawn()
     {
         WordSettings.Instance.hpPlayer--;
+        timer.GetComponent<TimerScript>().ResetTimer();
+        timer.GetComponent<TimerScript>().SetTimer(3f);
+        timer.GetComponent<TimerScript>().StartTimer();
         transform.position = _startPosition;
         _rb.velocity = Vector3.zero;
-        viewScript.TimeBeforeLaunch = 3f;
+        viewScript.TimeBeforeLaunch = 5f;
         _isMoving = false;
         
     }

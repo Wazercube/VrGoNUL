@@ -29,7 +29,8 @@ public class TimerScript : MonoBehaviour
 
         texts = new List<Text>();
         texts.Add(textGameObjects[0].GetComponent<Text>());
-        texts.Add(textGameObjects[1].GetComponent<Text>());       
+        texts.Add(textGameObjects[1].GetComponent<Text>());
+        StartTimer();
     }
 
     /// <summary>
@@ -53,6 +54,9 @@ public class TimerScript : MonoBehaviour
         texts = new List<Text>();
         texts.Add(textGameObjects[0].GetComponent<Text>());
         texts.Add(textGameObjects[1].GetComponent<Text>());
+        texts[0].text = null;
+        texts[1].text = null;
+        stopAll = false;
     }
 
     /// <summary>
