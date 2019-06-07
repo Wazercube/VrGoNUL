@@ -8,6 +8,10 @@ public class brique : MonoBehaviour
 
     public GameObject bonus;
 
+    public GameObject vfx;
+
+    public GameObject vfx2;
+
 
     public void TakeDamage(int amount)
     {
@@ -23,8 +27,11 @@ public class brique : MonoBehaviour
             if(WordSettings.Instance.nbBriqueBrake % 5 == 0)
             {
                 Instantiate(bonus, transform.position,transform.rotation);
-                Debug.Log("oui0");
+                Instantiate(vfx2, transform.position, transform.rotation);
+               
             }
+
+            Instantiate(vfx, transform.position,transform.rotation);
             Destroy(gameObject);
             WordSettings.Instance.CheckWin();
         }

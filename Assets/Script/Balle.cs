@@ -44,7 +44,7 @@ public class Balle : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.name == "DeadZone")
+        if(other.name.Contains( "DeadZone"))
         { 
             if(WordSettings.Instance.nbBalle == 1)
             {

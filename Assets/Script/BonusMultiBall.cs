@@ -34,4 +34,12 @@ public class BonusMultiBall : MonoBehaviour
         }
        
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.name.Contains("DeadZone"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }

@@ -26,7 +26,7 @@ public class BonusToRecover : MonoBehaviour
         Random.seed = (int)System.DateTime.Now.Ticks;
         Player = GameObject.FindGameObjectWithTag("Player");
         positionToReach = Player.transform.position + new Vector3(Random.Range(-rangeX, rangeX), Random.Range(-rangeY, rangeY));
-        Debug.Log(positionToReach);
+        
         direction = positionToReach - transform.position;
     }
 
