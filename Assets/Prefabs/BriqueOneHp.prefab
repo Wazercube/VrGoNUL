@@ -101,10 +101,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 350240780527425652}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b09a4ecb3f87ce47888b85d1682abd5, type: 3}
+  m_Script: {fileID: 11500000, guid: a2ebbd78589978a479407e4e4b6e6f8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 10
-  bonus: {fileID: 942421639741282567, guid: 3cf60207b0f4daa459b06ef05ef7d48c, type: 3}
-  vfx: {fileID: 1582857062948877011, guid: 877ce357973ab1a4488bea2dfb3278a4, type: 3}
-  vfx2: {fileID: 4790672804854405443, guid: d2ad16515f73cb54e95ca7d308945bc8, type: 3}
