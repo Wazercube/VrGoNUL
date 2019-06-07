@@ -28,7 +28,6 @@ public class brique : MonoBehaviour
             {
                 Instantiate(bonus, transform.position,transform.rotation);
                 Instantiate(vfx2, transform.position, transform.rotation);
-               
             }
 
             Instantiate(vfx, transform.position,transform.rotation);

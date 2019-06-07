@@ -10,6 +10,7 @@ public class ViewScript : MonoBehaviour
     private Balle scriptBalle;
     private float timeBeforeLaunch;
     public float offset;
+
     // Start is called before the first frame update
 
     void Start()
@@ -31,8 +32,11 @@ public class ViewScript : MonoBehaviour
         {
             panier.transform.position = hit.point;
             
-          
+
         }
+
+
+       
 
         if(timeBeforeLaunch>0)
         {
